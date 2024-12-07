@@ -9,8 +9,8 @@ const register = require('./controllers/register.js');
 const image = require('./controllers/image.js'); 
 const signin = require('./controllers/signin.js');
 
-app.listen(3000, () => {
-    console.log('listening please on port 3000') 
+app.listen(process.env.PORT || 3000, () => {
+    console.log(`listening please on port ${process.env.PORT}`) 
 })
 
 
@@ -42,4 +42,4 @@ app.get('/profile/:id', (req, res) => {
 })
 
 app.put('/image', (req, res) => { image.handleImage(req, res, db)}) // this endpoint updates the current user's entry count score
-app.post('/imageurl', (req, res) => { image.handleAPI(req, res)}) //this enpoint handles the API cal to Clarifai
+app.p('/imageurl', (req, res) => { image.handleAPI(req, res)}) //this enpoint handles the API cal to Clarifai
