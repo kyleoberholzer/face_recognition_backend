@@ -24,6 +24,10 @@ const db = knex({               //This is instantiating the KNEX database object
     },
   });
 
+app.get('/', (req, res) => {
+    res.send('Welcome to the Face Recognition Backend API!');
+});
+
 app.post('/signin', (req, res) => {signin.handleSignin(req, res, db, bcrypt)});
 
 app.post('/register', (req, res) => { register.handleRegister (req, res, db, bcrypt)});
