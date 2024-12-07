@@ -3,7 +3,7 @@ const handleRegister = (req, res, db, bcrypt) => {
 
 
     const { email, password, userName } = req.body;
-    if(!email || !name ||!password){                            //this checks to make sure the form submissions aren't blank
+    if(!email || !userName ||!password){                            //this checks to make sure the form submissions aren't blank
         return res.status(400).json ("Incorrect form submission")
     }
     const saltRounds = 10;

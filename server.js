@@ -1,5 +1,5 @@
 const express = require ('express');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const app = express();
 const cors = require('cors');
 app.use(express.json());
@@ -42,4 +42,4 @@ app.get('/profile/:id', (req, res) => {
 })
 
 app.put('/image', (req, res) => { image.handleImage(req, res, db)}) // this endpoint updates the current user's entry count score
-app.p('/imageurl', (req, res) => { image.handleAPI(req, res)}) //this enpoint handles the API cal to Clarifai
+app.post('/imageurl', (req, res) => { image.handleAPI(req, res)}) //this enpoint handles the API cal to Clarifai
