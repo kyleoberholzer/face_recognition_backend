@@ -46,4 +46,4 @@ app.get('/profile/:id', (req, res) => {
 })
 
 app.put('/image', (req, res) => { image.handleImage(req, res, db)}) // this endpoint updates the current user's entry count score
-app.post('/imageurl', (req, res) => { image.handleAPI(req, res)}) //this enpoint handles the API cal to Clarifai
+app.post('/imageurl', (req, res) => { image.handleAPI(req, res)}) //this enpoint handles the API call to Clarifai
