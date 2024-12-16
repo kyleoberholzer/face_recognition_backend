@@ -33,8 +33,7 @@ const handleAPI = (req, res) => {
 
     fetch(`https://api.clarifai.com/v2/models/${MODEL_ID}/outputs`, requestOptions)
     .then(response => response.json())
-    .then(data => {
-      // Send the Clarifai API response back to the client
+    .then(data => {      // Send the Clarifai API response back to the client
       res.json(data);
     })
     .catch(err => {
@@ -42,8 +41,6 @@ const handleAPI = (req, res) => {
       res.status(500).json({ error: 'Unable to communicate with Clarifai API' });
     });
 
-    
-    //I could place the above into a function, and the below kept here for future.
 }
 
 const handleImage = (req, res, db) => {
