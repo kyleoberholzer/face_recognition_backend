@@ -17,10 +17,10 @@ app.listen(process.env.PORT || 3000, () => {
 const db = knex({               //This is instantiating the KNEX database object
     client: 'pg',
     connection: {
-      host: '127.0.0.1',
-      user: 'kyleoberholzer',
-      password: '',
-      database: 'smart_brain',  //specifies the database name for the KNEX database object
+        connectionString: process.env.DATABASE_URL,
+        ssl: {
+          rejectUnauthorized: false
+        }
     },
   });
 
